@@ -13,6 +13,9 @@ services:
 
     webserver:
         image: puckel/docker-airflow:1.10.9
+        build:
+            args:
+                PYTHON_DEPS: pandas
         restart: always
         depends_on:
             - postgres
